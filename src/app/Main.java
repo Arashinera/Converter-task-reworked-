@@ -7,19 +7,39 @@ public class Main {
 
     static double km = 0;
     static double miles = 0;
+    //Створюємо змінну choice :
+    static int choice = 0;
 
     public static void main(String[] args) {
         valueInput();
         valueOutput();
     }
 
-    //Створюємо метод для вводу даних :
+    //Оновлюємо метод для вводу даних :
     public static void valueInput() {
         Scanner input = new Scanner(System.in);
         input.useLocale(Locale.ENGLISH);
 
-        System.out.println("Welcome to \"Miles to Km\" converter!\nPlease, enter your mile value : ");
-        miles = input.nextDouble();
+        //Створюємо перевірку зі змінною choice :
+        do {
+            System.out.println("""
+                    Welcome to Miles <--> Km converter. Enter your 1 or 2 opinion :
+                    1. Miles to Km
+                    2. Km to miles""");
+            choice = input.nextInt();
+        } while (choice < 1 || choice > 2);
+
+        //Створюємо Switch case для choice :
+        switch (choice) {
+            case 1:
+                System.out.println("Input your miles value :");
+                miles = input.nextDouble();
+                break;
+            case 2:
+                System.out.println("Input your km value :");
+                km = input.nextDouble();
+                break;
+        }
 
         input.close();
     }
