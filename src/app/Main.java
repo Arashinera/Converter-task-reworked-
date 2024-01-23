@@ -44,10 +44,17 @@ public class Main {
         input.close();
     }
 
-    //Створюємо метод для виводу даних :
+    //Оновлюємо метод для виводу даних :
     public static void valueOutput() {
-        km = milesToKmConverter(miles);
-        System.out.printf("Your km value equals \"%.3f\"", km);
+
+        //Створюємо умови здійснення бізнес логіки :
+        if (choice == 1) {
+            km = milesToKmConverter(miles);
+            System.out.printf("Your km value equals \"%.3f\"", km);
+        } else {
+            miles = kmToMilesConverter(km);
+            System.out.printf("Your mile value equals \"%.3f\"", miles);
+        }
     }
 
     //Створюємо метод бізнес логіки :
