@@ -34,4 +34,9 @@ public class Main {
     public static double milesToKmConverter(double miles) {
         return miles * 1.609;
     }
+
+    //Створюємо другий метод бізнес логіки :
+    public static double kmToMilesConverter(double km) {
+        return km / 1.609;
+    }
 }
